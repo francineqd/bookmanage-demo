@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/www/index.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/template-web.js"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/index.js"></script>
+    <script id="indexTpl" type="text/template">
+        {{each list}}
+            <tr>
+               <td>{{$value.id}}</td>
+               <td>{{$value.name}}</td>
+               <td>{{$value.author}}</td>
+               <td>{{$value.category}}</td>
+               <td>{{$value.description}}</td>
+               <td><a href="javascript:;">编辑</a> <a href="javascript:;">删除</a></td>
+            </tr>
+        {{/each}}
+    </script>
+</head>
+<body>
+    <div class="title">图书管理系统v1.0-阿龙著</div>
+    <div class="books">
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>作者</th>
+                    <th>分类</th>
+                    <th>概要</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="dataList">
+                <!--<tr>
+                    <td>1</td>
+                    <td>西游记</td>
+                    <td>吴承恩</td>
+                    <td>文学</td>
+                    <td>佛教与道教的斗争</td>
+                    <td><a href="#">编辑</a> <a href="#">删除</a></td>
+                </tr>-->
+                
+            </tbody>
+        </table>
+        <a href="javascript:;" id="addBook">添加图书</a>
+        <div  class="c-pages">
+            <div class="cp-item">
+                <span>共</span>
+                <span id="cp-count">0</span>
+                <span>条</span>
+            </div>
+            <div class="cp-item">
+                <span id="curr-page">1</span>
+                <span>/</span>
+                <span id="total-page">1</span>
+            </div>
+            <div class="cp-item">
+                <button id="home">首页</button>
+                <button id="prev">上页</button>
+                <button id="next">下页</button>
+                <button id="last">尾页</button>
+            </div>
+            <div class="cp-item">
+                <button id="goTo">转到</button>
+                <input type="number" id="goToPage" />
+                <span>页</span>
+            </div>
+        </div>
+    </div>
+    <form class="form" id="addBookForm">
+            <input type="hidden" name="id">
+            书名:<input type="text" name="name"><br>
+            作者:<input type="text" name="author"><br>
+            分类:<input type="text" name="category"><br>
+            描述:<input type="text" name="description"><br>
+            <input type="button" value="提交" />
+    </form>
+    <script>
+
+    </script>
+</body>
+</html>
